@@ -87,7 +87,6 @@ module Weka
       #   instances.has_attribute_type?(Attribute::STRING)
       def has_attribute_type?(type)
         type = map_attribute_type(type) unless type.is_a?(Integer)
-        return false if type.nil?
         check_for_attribute_type(type)
       end
 
@@ -316,7 +315,7 @@ module Weka
       end
 
       def map_attribute_type(type)
-        return unless Attribute::TYPES.include?(type.downcase.to_sym)
+        return -1 unless Attribute::TYPES.include?(type.downcase.to_sym)
         Attribute.const_get(type.upcase)
       end
 
