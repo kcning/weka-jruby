@@ -2,6 +2,7 @@ require 'java'
 require 'weka/jars'
 require 'weka/version'
 require 'weka/exceptions'
+require 'weka/refinement'
 
 module Weka
   include Jars
