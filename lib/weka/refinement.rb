@@ -15,7 +15,7 @@ module Weka
       #   [:name, :age, :title].to_weka_attribute_indices(instances)
       #
       # @note for non-existent attribute its index is -1
-      def to_weka_attribute_indices(instances)
+      def instances_indices(instances)
         map do |attr_name|
           unless attr_name.is_a?(String) || attr_name.is_a?(Symbol)
             raise "cannot map attribute specified with #{attr_name} into index"
